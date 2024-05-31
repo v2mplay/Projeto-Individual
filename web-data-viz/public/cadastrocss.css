@@ -1,0 +1,59 @@
+.imagemcadastro{
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-image: url(./edicoes/cadastro.png);
+    height: 634px;
+    width: 100%;
+    margin: -2px;
+    background-repeat: no-repeat;
+}
+
+.caixa{
+    background-color: #ECECEC;
+    width: 360px;
+    height: 416px;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 38%;
+    margin-top: 10%;
+    border-radius: 3%;
+}
+
+.caixa p{
+    margin: 5%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-left: 25%;
+    font-size: 18px;
+    margin-top: 4%;
+    margin-bottom: -1%;
+}
+
+.caixa input{
+    margin: -1%;
+    margin-left: 24%;
+    border-radius: 38px;
+    border: 3px;
+    height: 31px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #243243;
+   
+}
+
+.caixa input::placeholder{
+    color: white;
+}
+
+.caixa button{
+    background-color: #5168AF;
+    margin-top: 6%;
+    margin-left: 33%;
+    border: 0;
+    border-radius: 13px;
+    height: 9%;
+    width: 30%;
+    font-weight: bold;
+    font-size: 16px;
+}

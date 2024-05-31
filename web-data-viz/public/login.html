@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login|ADVEXT</title>
+    <link rel="stylesheet" href="logincss.css">
+    <link rel="shortcut icon" href="./edicoes/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="imagemlogin">
+        <div class="caixa">
+            <p>Email: </p> <br>
+            <input type="text" id="ipt_email" placeholder="Seu email"><br>
+            <p>Senha: </p> <br>
+            <input type="text" id="ipt_senha" placeholder="Senha"> <br>
+            <button class="efetuadologin" onclick="entrar()">ENTRAR</button>
+            <div id="divmensagem" style="color: red; font-family: Arial, Helvetica, sans-serif; margin-top: 2%; font-size: 15px; text-align: center;"></div>
+    </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+       
+
+function entrar() {
+    // aguardar();
+
+       
+    var email = ipt_email.value;
+        var senha = ipt_senha.value;
+
+        if (email == '' && senha == '') {
+            divmensagem.innerHTML += `Campos em branco, por favor preencha todos os campos!`
+        }
+
+    var emailVar = ipt_email.value;
+    var senhaVar = ipt_senha.value;
+
+    if (emailVar == "" || senhaVar == "") {
+        // cardErro.style.display = "block"
+        // mensagem_erro.innerHTML = "
+        alert('Mensagem de erro para todos os campos em branco');
+        // finalizarAguardar();
+        return false;
+    }
+    // else {
+    //     setInterval(sumirMensagem, 5000)
+    // }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: emailVar,
+            senhaServer: senhaVar
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(JSON.stringify(json));
+                console.log(json);
+                sessionStorage.EMAIL_USUARIO = json[0].email;
+                sessionStorage.NOME_USUARIO = json[0].nome;
+                sessionStorage.ID_USUARIO = json[0].idusuario;
+
+                //o Json está como lista, e foi necessário colocar um colchete para que ele possa pegar sempre pegar na posição '0' os dados do usuario
+                
+
+                setTimeout(function () {
+                    window.open("http://localhost:3333/quiz.html");
+                }, 1000); // apenas para exibir o loading
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                // finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
+// function sumirMensagem() {
+//     cardErro.style.display = "none"
+// }
+
+
+</script>

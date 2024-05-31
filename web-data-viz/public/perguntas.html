@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="perguntascss.css">
+    <link rel="shortcut icon" href="./edicoes/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="perguntaimg">
+        <div class="balao">
+            <p class="texto1">Antes de finalizarmos, <br> responda as perguntas ao lado</p> <br> <span class="Nome">-Woo
+                Young Woo</span>
+        </div>
+        <div class="caixa">
+            <p class="pergunta1"><b>Você gostou de assistir <br> Advogada Extraordinária?</b></p>
+            <button class="sim" onclick="alternativa1(1)"><b>SIM</b></button><br>
+            <button class="nao" onclick="alternativa1(2)"><b>NÃO</b></button> <br>
+            <p class="pergunta2"><b>Você recomendaria <br>Advogada Extraordinária?</b></p>
+            <button class="sim" onclick="alternativa2(1)"><b>SIM</b></button><br>
+            <button class="nao" onclick="alternativa2(2)"><b>NÃO</b></button> <br>
+            <button class="proximo"> <a style="color: white; text-decoration: none;" href="dashboard2.html"><b
+                        style="font-size: 35px;"> > </b></a></button>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var gostou = 0;
+    var nao_gostou = 0;
+    var recomendaria = 0;
+    var nao_recomendaria = 0;
+
+    var lista_respostas1 = [];
+
+    function alternativa1(opcao) {
+
+        if (opcao == '1') {
+            gostou++
+            lista_respostas1.push(true);
+
+        }
+        else if (opcao == '2') {
+            nao_gostou++
+            lista_respostas1.push(false);
+
+        }
+    }
+
+    function alternativa2(opcao) {
+        if (opcao == '1') {
+            recomendaria++
+            lista_respostas1.push(true);
+
+        }
+        else if (opcao == '2') {
+            nao_recomendaria++
+            lista_respostas1.push(false);}
+
+
+
+            fetch('http://localhost:3333/quiz2/ultimas/inserirquiz2', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+
+                    idusuario: sessionStorage.getItem('ID_USUARIO'),
+                    gostaram: gostou,
+                    naogostou: nao_gostou,
+                    recomendaria: recomendaria,
+                    naorecomendaria: nao_recomendaria,
+                }),
+            })
+            setTimeout(function () { window.open('dashboard2.html') }, 1000)
+            // setTimeout serviu para eu definir a velocidade q muda de página, e o Window para chamar uma outra página
+        }
+</script>

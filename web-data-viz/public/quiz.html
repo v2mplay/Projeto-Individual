@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quizcss.css">
+    <link rel="shortcut icon" href="./edicoes/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="dashboardimg">
+        <div class="header">
+            <div class="container">
+                <div class="titulo"><b>Advogada Extraordinária</b></div>
+                <a class="Quiz" href="quiz.html">Quiz</a>
+                <a class="Dashboard" href="dashboard1.html">Dashboard</a>
+                <a class="Pagina" href="index.html">Página inicial</a>
+            </div>
+        </div>
+        <div class="balao">
+            <p class="texto1">Olá, seja bem-vindo ao Quiz! <br>
+                Ao lado temos o as perguntas do Quiz, a qual contém 3 alternativas, <br> dentre elas uma está correta.
+                <br> Ao final terá sua pontuação. <br>Boa sorte!
+            </p> <br> <span class="Nome">-Woo Young Woo</span>
+        </div>
+
+        <!--  CAIXA DO QUIZ - PERGUNTAS-->
+        <!--  CRIEI 5 DIV PARA REPRESENTAR CADA PERGUNTA E ALTERNATIVA DIFERENTE,
+        FOI UTILIZADO O DISPLAY 'NONE' PARA FICAREM OCULTAS E SEREM CHAMADAS NAS FUNÇÕES,
+    ATRAVÉS DO DISPLAY - FLEX -->
+
+        <div id="quizone" class="caixaquiz">
+            <p class="pergunta">Qual é o grau de autismo da personagem <br>principal Woo Young Woo?</p>
+            <button onclick="passar1(1)" class="opcao1">Nível 5</button> <br>
+            <button onclick="passar1(2)" class="opcao2">Nível 1</button><br>
+            <button onclick="passar1(3)" class="opcao3">Nível 3</button><br>
+        </div>
+
+        <div id="quiztwo" class="caixaquiz1" style="display: none;">
+            <p class="pergunta">Como a personagem Woo Young Woo,<br>tenta compreender o ambiente a qual vive? </p>
+            <button onclick="passar2(1)" class="opcao1">Através de músicas</button> <br>
+            <button onclick="passar2(2)" class="opcao2">Através da advocacia</button><br>
+            <button onclick="passar2(3)" class="opcao3">Através das baleias</button><br>
+        </div>
+
+        <div id="quizthree" class="caixaquiz2" style="display: none;">
+            <p class="pergunta">Com quantos anos Woo Young Woo <br> falou pela primeira vez?</p>
+            <button onclick="passar3(1)" class="opcao1">10</button> <br>
+            <button onclick="passar3(2)" class="opcao2">5</button><br>
+            <button onclick="passar3(3)" class="opcao3">3</button><br>
+        </div>
+
+        <div id="quizfour" class="caixaquiz3" style="display: none;">
+            <p class="pergunta">Uns dos problemas que a personagem <br> Woo Young Woo enfrenta durante sua vida é:</p>
+            <button onclick="passar4(1)" class="opcao1">Perda de memória</button> <br>
+            <button onclick="passar4(2)" class="opcao2">Anemia</button><br>
+            <button onclick="passar4(3)" class="opcao3">Interação social</button><br>
+        </div>
+
+        <div id="quizfive" class="caixaquiz4" style="display: none;">
+            <p class="pergunta">Qual é o nome da empresa a qual Woo Young Woo trabalhou?</p>
+            <button onclick="passar5(1)" class="opcao1">Queens</button> <br>
+            <button onclick="passar5(2)" class="opcao2">Hanbada</button><br>
+            <button onclick="passar5(3)" class="opcao3">Shutz</button><br>
+        </div>
+
+        <div id="quizsix" class="caixaquiz5" style="display: none;">
+            <p class="pergunta">Qual é o nome do personagem a qual se apaixona pela Woo Young Woo?</p>
+            <button onclick="passar6(1)" class="opcao1">Kwon Min-woo</button> <br>
+            <button onclick="passar6(2)" class="opcao2">Jung Myeong-Seok</button><br>
+            <button onclick="passar6(3)" class="opcao3">Lee Jun-ho</button><br>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<!-- todos os onclick dos botões são uma posição, ou seja, o passar '1' seria a posição '1' e assim por diante. No momento do push nas variaveis, ele identifica através do parametro definido '1,2,3' -->
+<script>
+
+
+    var acertos = 0;
+    var erros = 0;
+    var lista_respostas = [];
+
+    function passar1(opcao) {
+        quizone.style.display = 'none';
+        quiztwo.style.display = 'flex';
+
+        if (opcao == '2') {
+            acertos++
+            lista_respostas.push(true)
+
+        }
+        else if (opcao == '1') {
+            erros++
+            lista_respostas.push(false)
+
+        } else if (opcao == '3') {
+            erros++
+            lista_respostas.push(false)
+        }
+
+
+    }
+
+    function passar2(opcao) {
+        quiztwo.style.display = 'none';
+        quizthree.style.display = 'flex';
+
+        if (opcao == '2') {
+            erros++
+            lista_respostas.push(false)
+
+        }
+        else if (opcao == '1') {
+            erros++
+            lista_respostas.push(false)
+
+        } else if (opcao == '3') {
+            acertos++
+            lista_respostas.push(true)
+        }
+    }
+
+    function passar3(opcao) {
+        quizthree.style.display = 'none';
+        quizfour.style.display = 'flex';
+
+        if (opcao == '2') {
+            acertos++
+            lista_respostas.push(true)
+
+        }
+        else if (opcao == '1') {
+            erros++
+            lista_respostas.push(false)
+
+        } else if (opcao == '3') {
+            erros++
+            lista_respostas.push(false)
+        }
+    }
+
+    function passar4(opcao) {
+        quizfour.style.display = 'none';
+        quizfive.style.display = 'flex';
+
+        if (opcao == '2') {
+            erros++
+            lista_respostas.push(false)
+
+        }
+        else if (opcao == '1') {
+            erros++
+            lista_respostas.push(false)
+
+        } else if (opcao == '3') {
+            acertos++
+            lista_respostas.push(true)
+        }
+    }
+
+    function passar5(opcao) {
+        quizfive.style.display = 'none';
+        quizsix.style.display = 'flex';
+
+        if (opcao == '2') {
+            acertos++
+            lista_respostas.push(true)
+
+        }
+        else if (opcao == '1') {
+            erros++
+            lista_respostas.push(false)
+
+        } else if (opcao == '3') {
+            erros++
+            lista_respostas.push(false)
+        }
+
+    }
+    function passar6(opcao) {
+
+        if (opcao == '2') {
+            erros++
+            lista_respostas.push(false)
+
+        }
+        else if (opcao == '1') {
+            erros++
+            lista_respostas.push(false)
+
+        } else if (opcao == '3') {
+            acertos++
+            lista_respostas.push(true)
+        }
+
+        for(var cont = 0; cont <6; cont++){
+            sessionStorage.setItem(`guardarrespostas ${cont}`, lista_respostas[cont]);
+        }
+        //sessionStorage = guardar informações.
+      
+
+        // fetch serve para conectar na API
+        fetch('/quiz1/ultimas/inserirquiz', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                qtd_acertos: acertos,
+                qtd_erros: erros,
+                idusuario: sessionStorage.getItem('ID_USUARIO')
+            }),
+        })
+        setTimeout(function () { window.open('dashboard1.html') }, 1000)
+        // setTimeout serviu para eu definir a velocidade q muda de página, e o Window para chamar uma outra página
+    }
+</script>

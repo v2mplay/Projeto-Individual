@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro|ADVEXT</title>
+    <link rel="stylesheet" href="cadastrocss.css">
+    <link rel="shortcut icon" href="./edicoes/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="imagemcadastro">
+        <div class="caixa">
+                <p>Nome: </p><br>
+                <input type="text" id="ipt_nome" placeholder="Seu nome"; style="color: white;"><br>
+                <p>Email: </p> <br>
+                <input type="text" id="ipt_email" placeholder="Seu email" style="color: white;"><br>
+                <p>Senha: </p> <br>
+                <input type="password" id="ipt_senha" placeholder="Senha" style="color: white;"> <br>
+                <p>Confirmar senha:</p> <br>
+                <input type="password" id="ipt_confirmar" placeholder="Confirme senha" style="color: white;"><br>
+                <button class="efetuadocadastro" onclick="cadastrar()">Cadastrar</button>
+                <div id="divmensagem" style="color: red; font-family: Arial, Helvetica, sans-serif; margin-top: 2%; font-size: 15px; text-align: center;"></div>
+        </div>
+        <div id="div_erro"></div>
+    </div>
+</body>
+</html>
+
+<script>
+    
+        
+
+    function cadastrar() {
+
+      var nome = ipt_nome.value;
+        var email = ipt_email.value;
+        var senha = ipt_senha.value;
+        var confirmarSenha = ipt_confirmar.value;
+
+        divmensagem.innerHTML = "";
+
+        
+        if (nome == '' || email == '' || senha == '' || confirmarSenha == '') {
+            divmensagem.innerHTML += `Cadastro não efetuado, por favor preencha todos os campos!`
+        }
+
+        else if (senha.length <= 3 ) {
+            divmensagem.innerHTML += `A senha não pode ter menos do que 3 caracteres. Digite novamente`
+
+        }
+
+        else if (confirmarSenha != senha) {
+            divmensagem.innerHTML += `Os campos de senha não se correspondem. Digite novamente`
+        }
+        
+        else{
+            alert("CADASTRO EFETUADO COM SUCESSO",
+                // window.location = "login.html"
+            )
+        }
+
+
+    //   aguardar();
+  
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = ipt_nome.value;
+      var emailVar = ipt_email.value;
+      var senhaVar = ipt_senha.value;
+      var confirmacaoSenhaVar = ipt_confirmar.value;
+      if (
+        nomeVar == "" ||
+        emailVar == "" ||
+        senhaVar == "" ||
+        confirmacaoSenhaVar == ""
+     
+      ) {
+        // cardErro.style.display = "block";
+        // mensagem_erro.innerHTML =
+         alert ('Mensagem de erro para todos os campos em branco');
+  
+        // finalizarAguardar();
+        return false;
+      } else {
+        setInterval(sumirMensagem, 5000);
+      }
+  
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar
+          
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            // cardErro.style.display = "block";
+  
+            // mensagem_erro.innerHTML =
+             alert('Cadastro realizado com sucesso! Redirecionando para tela de Login...');
+  
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+  
+            limparFormulario();
+            // finalizarAguardar();
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        //   finalizarAguardar();
+        });
+  
+      return false;
+    }
+  
+    // function listar() {
+    //   fetch("/empresas/listar", {
+    //     method: "GET",
+    //   })
+    //     .then(function (resposta) {
+    //       resposta.json().then((empresas) => {
+    //         empresas.forEach((empresa) => {
+    //           listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+    //         });
+    //       });
+    //     })
+    //     .catch(function (resposta) {
+    //       console.log(`#ERRO: ${resposta}`);
+    //     });
+    // }
+  
+    function sumirMensagem() {
+      div_erro.style.display = "none";
+    }
+  </script>

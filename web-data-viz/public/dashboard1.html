@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard1css.css">
+    <link rel="shortcut icon" href="./edicoes/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="dashboard1img">
+        <div class="header">
+            <div class="container">
+                <div class="titulo"><b>Advogada Extraordinária</b></div>
+                <a class="Quiz" href="quiz.html">Quiz</a>
+                <a class="Dashboard" href="dashboard1.html">Dashboard</a>
+                <a class="Pagina" href="index.html">Página inicial</a>
+            </div>
+        </div>
+
+        <div class="balao">
+            <p class="texto1">Agora vamos analisar <br> as suas respostas</p> <br> <span class="Nome">-Woo Young
+                Woo</span>
+        </div>
+
+        <div class="caixa2">
+            <p class="texto2">
+                Você pode ver a resposta correta ao <br>
+                clicar na pergunta que está errada
+            </p>
+        </div>
+        <button class="proximo"> <a style="color: white; text-decoration: none;" href="perguntas.html"><b> >
+                </b></a></button>
+                <div class="container1">
+        <p class="totalacertos">Total de acertos</p> <br>
+        <div id="indicadores1" class="indicador1"></div> <br>
+        <p class="totalerros"> Total de erros</p> <br>
+        <div id="indicadores2" class="indicador2">
+            <p class="total"></p></div>
+        </div> <br>
+        <div class="container2">
+        <div id="divmensagem" class="div"></div> 
+    </div>
+  
+    <div id="divMsg"></div>
+</body>
+
+</html>
+
+<script>
+
+console.log(typeof resposta);
+
+// perguntas 
+    for (var i = 0; i < 6; i++) {
+        divmensagem.innerHTML += `<p class="perguntas"> Pergunta - ${i+1} </p>`
+       
+    }
+
+    // bolinhas
+    for( var cont = 0; cont < 6; cont++){
+
+        var resposta = sessionStorage.getItem(`guardarrespostas ${cont}`);
+
+        if (resposta == 'true') {
+            divMsg.innerHTML += `<div class="div1"></div> <br>`
+        }
+         else if (resposta == 'false') {
+            divMsg.innerHTML += `<div class="div2"></div> <br>`
+        }
+    }
+
+    fetch('http://localhost:3333/quiz1/ultimas/puxarquiz').then(function (resposta) {
+          
+  
+          if (resposta.ok) {
+            
+            console.log("resposta: ", resposta.json().then(res => {
+                indicadores1.innerHTML = `${res[0].totalacertos}`
+                indicadores2.innerHTML = `${res[0].totalerros}`
+                console.log(res[0].totalacertos)
+                console.log(res[0].totalerros)
+            }));
+           
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+
+</script>

@@ -1,0 +1,361 @@
+body {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.pagina1 {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-image: url(./edicoes/pagina1editada.png);
+    height: 630px;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin: 0px;
+    
+}
+
+.login {
+    display: flex;
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 150px;
+    border-radius: 55px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 0px;
+    margin: 0% 10%;
+    
+
+}
+
+.cadastrar {
+    display: flex;
+    background-color: #264079;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    width: 150px;
+    border-radius: 55px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 0px;
+}
+
+.navbar{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+    
+}
+
+.container{
+    width: 90%;
+    height: 20%;
+    margin: 0%;
+    display: flex;
+    justify-content: end;
+}
+
+.container2{
+    width: 100%;
+    height: 89%;
+    /* margin: 0%; */
+    display: flex;
+    justify-content: center;
+    text-align: center ;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo{
+    
+background-image:url(./edicoes/istockphoto-473457492-170667a-removebg-preview.png);
+height: 10%;
+width: 465px;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+.tituloInicial{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 0%;
+    margin-top: -1%;
+}
+
+.texto1{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    height: 50px;
+}
+
+
+/* página 2- sobre o dorama */
+
+.pagina2{
+    background-image: url(./edicoes/pagina2.png);
+    height: 650px;
+    width: 543px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: inline-end;
+    
+}
+
+.caixaazul1{
+    background-color: #243243;
+    height: 650px;
+    width: 800px;
+    color: white;
+    float: inline-start;
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+    text-align: start ;
+    align-items: start;
+    flex-direction: column;
+}
+
+.titulo2{
+    
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    align-items: start;
+    text-align: start;
+    margin-bottom: 0%;
+    margin-top: 10%;
+    margin-left: 4%;
+    font-size: 25px;
+}
+
+.texto2{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-top: 0%;
+    margin-left: 4%;
+    margin-right: 5%;
+}
+
+/* página 3 - sobre a personagem */
+
+.pagina3{
+    background-image: url(./edicoes/pagina3.png);
+    height: 640px;
+    width: 1345px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 632px;
+    
+}
+
+.titulo3{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 0%;
+    margin-top: 10%;
+}
+.container3{
+    width: 100%;
+    height: 98vh;
+    /* margin: 0%; */
+    display: flex;
+    justify-content: center;
+    text-align: center ;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.texto3{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+    height: 107px;
+    width: 830px;
+}
+
+/* página 4 - A REPERCUSSÃO DO DORAMA */
+
+.pagina4{
+    background-image: url(./edicoes/pagina4.png);
+    height: 635px;
+    width: 543px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: inline-start;
+}
+
+.caixaazul2{
+    background-color: #243243;
+    height: 635px;
+    width: 800px;
+    color: white;
+    float: inline-end;
+    font-size: 20px;
+    display: flex;
+    justify-content: end;
+    text-align: end ;
+    align-items: end;
+    flex-direction: column;
+}
+
+.titulo4{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    align-items: end;
+    text-align: end;
+    margin-right: 4%;
+    font-size: 32px;
+    height: 18%;
+
+}
+
+.texto4{
+    margin-right: 4%;
+    height: 71%;
+    margin-left: 7%;
+    font-size: 20px;
+
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+/* página 5 - DORAMA X AUTISMO*/
+.pagina5{
+    background-image: url(./edicoes/pagina5.png);
+    height: 640px;
+    width: 1345px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 632px;
+}
+
+.titulo5{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    align-items: end;
+    text-align: end;
+    margin-right: 4%;
+    font-size: 32px;
+    height: 20%;
+    display: flex;
+    float: inline-end;
+    justify-content: end;
+    text-align: end ;
+    align-items: end;
+    flex-direction: column;
+    color: white;
+}
+
+.texto5{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-right: 4%;
+    height: 70%;
+    margin-left: 57%;
+    font-size: 20px;
+    display: flex;
+    float: inline-end;
+    justify-content: end;
+    text-align: end;
+    align-items: end;
+    color: white;
+}
+
+/* página 6 - CONCLUSÃO*/
+
+/* .pagina6{
+    background-image: url(./edicoes/pagina6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 285px;
+    width: 100%;
+} */
+
+.caixaazul3{
+    background-color: #243243;
+    height: 345px;
+    width: 1343px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo6{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    align-items: end;
+    text-align: end;
+    margin-right: 4%;
+    font-size: 32px;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    text-align: center ;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.texto6{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-right: 22%;
+    height: 70%;
+    margin-left: 17%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
+/* página 7 - DIRECIONAR AO QUIZ*/
+
+.pagina7{
+    background-image: url(./edicoes/pagina7png.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 804px;
+    width: 100%;
+    margin-top: -21px;
+}
+
+.titulo7{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-left: 6%;
+    font-size: 32px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    align-items: start;
+    flex-direction: column;
+    color: white;
+}
+
+.direcionarCadastro{
+    display: flex;
+    background-color: #AFFFDB;
+    color: rgb(2, 2, 2);
+    height: 52px;
+    width: 189px;
+    border-radius: 55px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 0px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin-top: -26%;
+    margin-left: 6%;
+    font-size: 17px;
+
+}

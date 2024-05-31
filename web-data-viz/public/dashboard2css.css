@@ -1,0 +1,35 @@
+.dashboard2img{
+    background-image: url(./edicoes/dashboard2img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 740px;
+    width: 1333px;
+    margin: -2px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -8%;
+}
+
+.titulografico{
+    font-size: 25px;
+    margin-top: 11%;
+    margin-left: 11%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.caixa{
+    background-color: white;
+    width: 384px;
+    height: 95px;
+    margin-top: 30%;
+    margin-left: 44%;
+}
+
+.texto{
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 6%;
+}
