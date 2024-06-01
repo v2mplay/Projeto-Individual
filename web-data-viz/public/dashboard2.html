@@ -6,17 +6,91 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard2css.css">
     <link rel="shortcut icon" href="./edicoes/logo.png" type="image/x-icon">
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="dashboard2img">
         <h1 class="titulografico">
             <b>Porcentual de pessoas que gostaram e <br>recomendariam Advogada Extraordinária</b>
         </h1>
-        <div class="caixa">
-            <p class="texto">
-                Você sabia que 90% das pessoas que responderam <br> as perguntas anteriores gostaram do dorama, e 90% <br> recomendaria Advogada Extraordinária?
-            </p>
-        </div>
+        <div class="grafico">
+            <canvas id="myChart"></canvas>
+          </div>
+      <div id="div_mensagem"></div>
     </div>
 </body>
 </html>
+
+<script>
+lista_naogostou = [];
+lista_gostou =[];
+lista_naorecomendaria =[];
+lista_recomendaria =[];
+
+
+
+div_mensagem.innerHTML = `<div class="caixa">
+            <p class="texto">
+                Você sabia que 90% das pessoas que responderam <br> as perguntas anteriores gostaram do dorama, e 90% <br> recomendaria Advogada Extraordinária?
+            </p>
+        </div>`
+
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First Dataset',
+    data: [65, 59, 80, 81, 56, 55, 40],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(201, 203, 207, 0.2)'
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)',
+      'rgb(201, 203, 207)'
+    ],
+    borderWidth: 1
+  }]
+};
+</script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+  function puxargrafico(dados){
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Gostaram', 'Não Gostaram', 'Recomendariam', 'Não Recomendariam'],
+        datasets: [{
+          label: 'Respostas',
+          data: [dados.gostaram, dados.naogostou, dados.recomendaria, dados.naorecomendaria],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });}
+    //then = função pra executar dps que uma promessa começa
+    fetch('quiz2/ultimas/puxarquiz2').then(function (response) {
+        response.json().then(function (res) {
+            console.log(res)
+            puxargrafico(res[0])
+            
+        })
+    })
+  </script>

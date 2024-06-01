@@ -1,4 +1,4 @@
-var quiz2Model = require("../models/quiz2Model");
+var graficoModel = require("../models/graficoModel");
 
 function buscarUltimasMedidas(req, res) {
 
@@ -6,15 +6,10 @@ function buscarUltimasMedidas(req, res) {
 
     
     
-    var gostaram = req.body.gostaram;
-    var recomendaria = req.body.recomendaria;
-    var naogostou = req.body.naogostou;
-    var naorecomendaria = req.body.naorecomendaria;
-    var idusuario = req.body.idusuario;
-
+   
     // console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    quiz2Model.buscarUltimasMedidas(gostaram, recomendaria, naogostou, naorecomendaria, idusuario).then(function (resultado) {
+    graficoModel.buscarUltimasMedidas().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -34,7 +29,7 @@ function buscarUltimoresultados(req, res) {
 
     // console.log(`Recuperando medidas em tempo real`);
 
-    quiz2Model.buscarUltimoresultados().then(function (resultado) {
+    graficoModel.buscarUltimoresultados().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

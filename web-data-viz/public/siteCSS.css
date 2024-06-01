@@ -177,7 +177,7 @@ background-position: center;
 .texto3{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     height: 107px;
     width: 830px;
 }
@@ -279,7 +279,7 @@ background-position: center;
 
 .caixaazul3{
     background-color: #243243;
-    height: 345px;
+    height: 219px;
     width: 1343px;
     color: white;
     font-size: 20px;
@@ -303,6 +303,7 @@ background-position: center;
     align-items: center;
     flex-direction: column;
     color: white;
+    margin-top: 4%;
 }
 
 .texto6{
@@ -316,6 +317,7 @@ background-position: center;
     text-align: center;
     align-items: center;
     color: white;
+   
 }
 
 /* página 7 - DIRECIONAR AO QUIZ*/

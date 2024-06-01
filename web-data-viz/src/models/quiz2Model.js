@@ -13,7 +13,8 @@ function buscarUltimasMedidas(gostaram, recomendaria, naogostou, naorecomendaria
 
 function buscarUltimoresultados() {
 
-    var instrucaoSql = `SELECT idquiz1, gostaram, recomendaria, naogostou, naorecomendaria from quiz2`;
+    var instrucaoSql = `SELECT SUM(gostaram) as gostaram, SUM(recomendaria) as recomendaria, SUM(naogostou) as naogostou, SUM(naorecomendaria) as naorecomendaria from quiz2;
+    `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
