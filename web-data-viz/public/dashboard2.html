@@ -80,7 +80,11 @@ const data = {
       options: {
         scales: {
           y: {
-            beginAtZero: true
+            min: 0,
+            max: 15,
+            ticks: {
+          // forces step size to be 50 units
+          stepSize: 0}
           }
         }
       }
