@@ -138,9 +138,20 @@ background-position: center;
 
 .texto2{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    margin-top: 0%;
+    margin-top: -2%;
     margin-left: 4%;
     margin-right: 5%;
+}
+
+.onu{
+    height: 85%;
+    width: 45%;
+    background-image: url(./edicoes/SimboloOnu.png);
+    margin-top: -3%;
+    margin-left: 89%;
+    background-size: 25%;
+    background-repeat: no-repeat;
+
 }
 
 /* página 3 - sobre a personagem */

@@ -1,5 +1,5 @@
 .dashboard1img {
-  background-image: url(./edicoes/dashboard2.png);
+  background-image: url(./edicoes/dashboard1.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 737px;
@@ -99,7 +99,7 @@ a {
 .caixa2 {
   width: 299px;
   height: 55px;
-  background-color: #84A2BE;
+  background-color: #ECECEC;
   margin-top: 18%;
   margin-left: 23%;
 }
@@ -115,7 +115,7 @@ a {
 button {
   height: 55px;
   width: 60px;
-  background-color: #84A2BE;
+  background-color: #ffffff;
   margin-left: 92%;
   border: 0;
   border-radius: 43%;
@@ -123,12 +123,12 @@ button {
 }
 
 .seta {
-  color: white;
+  color: #84A2BE;
   font-size: 229%;
 }
 
 .indicador1 {
-  background-color: #84A2BE;
+  background-color: #ECECEC;
   width: 200px;
   height: 31%;
   flex-direction: column;
@@ -136,12 +136,12 @@ button {
   margin-top: -36%;
   border-radius: 25px;
   text-align: center;
-    color: rgb(0, 255, 21);
+    color: rgb(3, 119, 12);
     font-size: 43px;
 }
 
 .indicador2 {
-  background-color: #84A2BE;
+  background-color: #ECECEC;
   width: 200px;
   height: 31%;
   flex-direction: column;
@@ -229,7 +229,7 @@ button {
     width: 37px;
     height: 36px;
     border: #131212;
-    background-color: rgb(0, 148, 7);
+    background-color: rgb(9, 99, 14);
     margin-left: 78%;
 }
 

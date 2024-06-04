@@ -20,9 +20,9 @@
             </div>
         </div>
         <div class="balao">
-            <p class="texto1">Olá, seja bem-vindo ao Quiz! <br>
-                Ao lado temos as perguntas do Quiz, a qual contém 3 alternativas, <br> dentre elas uma está correta.
-                <br> Ao final terá sua pontuação. <br>Boa sorte!
+            <p class="texto1">Olá, seja bem-vindo ao Quiz!
+                Ao lado temos as perguntas do Quiz, a qual contém 3 alternativas, dentre elas uma está correta.
+                Ao final terá sua pontuação. <br>Boa sorte!
             </p> <br> <span class="Nome">-Woo Young Woo</span>
         </div>
 
@@ -199,11 +199,11 @@
             lista_respostas.push(true)
         }
 
-        for(var cont = 0; cont <6; cont++){
+        for (var cont = 0; cont < 6; cont++) {
             sessionStorage.setItem(`guardarrespostas ${cont}`, lista_respostas[cont]);
         }
         //sessionStorage = guardar informações.
-      
+
 
         // fetch serve para conectar na API
         fetch('/quiz1/ultimas/inserirquiz', {

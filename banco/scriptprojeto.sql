@@ -29,3 +29,5 @@ dtQuiz DATETIME,
 fkUsuario int, foreign key (fkUsuario) references usuario(idusuario));
 
 select * from quiz2;
+
+SELECT SUM(gostaram), SUM(recomendaria), SUM(naogostou), SUM(naorecomendaria) from quiz2;

@@ -22,19 +22,10 @@
 </html>
 
 <script>
-lista_naogostou = [];
-lista_gostou =[];
-lista_naorecomendaria =[];
-lista_recomendaria =[];
 
 
-
-div_mensagem.innerHTML = `<div class="caixa">
-            <p class="texto">
-                Você sabia que 90% das pessoas que responderam <br> as perguntas anteriores gostaram do dorama, e 90% <br> recomendaria Advogada Extraordinária?
-            </p>
-        </div>`
-
+Chart.defaults.color = 'white';
+Chart.defaults.font.size = 15;
 const labels = Utils.months({count: 7});
 const data = {
   labels: labels,
@@ -88,7 +79,17 @@ const data = {
           }
         }
       }
-    });}
+    });
+
+    var calculo = Number(dados.gostaram) + Number(dados.recomendaria);
+
+div_mensagem.innerHTML = `<div class="caixa">
+            <p class="texto">
+              Curiosidade: Do total dos usuários que responderam esse questionário, ${calculo} gostaram e recomendariam Advogada Extraordinária.
+            </p>
+        </div>`
+  
+  }
     //then = função pra executar dps que uma promessa começa
     fetch('quiz2/ultimas/puxarquiz2').then(function (response) {
         response.json().then(function (res) {
