@@ -1,4 +1,5 @@
 create database projetoindividual;
+
 use projetoindividual;
 
 
